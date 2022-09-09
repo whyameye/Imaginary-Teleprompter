@@ -441,7 +441,8 @@ var debug = false;
     function togglePromptIt() {
         if (promptIt.onclick === submitTeleprompter) {
             // Update button
-            promptIt.textContent = "Close It...";
+            promptIt.textContent = "HappyCorp kindly asks you to read aloud for a minimum of 30 seconds.";
+            promptIt.style.textAlign = "center";
             promptIt.onclick = restoreEditor;
             // Hide stuff
             if (instance[0]) {
@@ -450,6 +451,7 @@ var debug = false;
                 document.getElementById("footer").style.display = "none";
                 // Show prompter instance
                 document.getElementById("framecontainer").style.display = "block";
+                //document.getElementById("hackme").style.display = "none";
                 if (instance[1] && syncMethod===syncMethods.canvas) {
                     canvas.style.display = "block";
                     frame.style.display = "none";
