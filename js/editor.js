@@ -19,7 +19,7 @@
 */
 
 "use strict";
-var debug = false;
+var debug = true;
 
 (function() {
     // Use JavaScript Strict Mode.
