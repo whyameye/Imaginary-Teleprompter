@@ -304,7 +304,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onversionchange
             if (debug) console.log("Pointer active") && false;
             internalPauseAnimation();
             pointer.prompterstart = getCurrPos();
-            pointer.startposition = event.clientY;
+            if (event)
+                pointer.startposition = event.clientY;
+            else
+                pointer.startposition = 0;
             pointer.previousposition = pointer.startposition;
             pointer.active = true;
         }
@@ -485,9 +488,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onversionchange
     }
 
     document.addEventListener( 'transitionend', function() {
-        if(atStart()||atEnd()) {
-            stopAll();
-            timer.stopTimer();
+        //if(atStart()||atEnd()) {
+        if(atEnd()) {
+            pointerActive();
+            pointerInactive();
+            setCurrPosStill(0);
+            //stopAll();
+            //timer.stopTimer();
         }
         if (debug) console.log("Reached end") && false;
     }, false);
