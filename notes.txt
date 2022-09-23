@@ -1,0 +1,5 @@
+set fontsize line 567 editor.js
+set speed line 559 editor.js
+set timer line 581 editor.js
+add message at end of timer 206 of jquery.timer.js
+timer stopVal teleprompter.js line 184

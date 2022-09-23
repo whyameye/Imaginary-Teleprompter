@@ -44,7 +44,8 @@ body {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	font-family: courier, monospace;
+/*	font-family: courier, monospace; johnh */
+	font-family: Arial, Verdana, sans-serif;
 	background: rgba(0,0,0,0.22);
 	color: #FFF;
 	font-size: 20.5vmin;

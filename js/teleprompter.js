@@ -67,7 +67,42 @@ https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onversionchange
         "fastForward":19,
         "rewind":20
     });
+// johnh start
+    let socket = new WebSocket("ws://localhost:9001");
 
+    socket.onopen = function(e) {
+        console.log("[open] Connection established");
+        //alert("Sending to server");
+        //socket.send("My name is John");
+    };
+
+    socket.onmessage = function(event) {
+        console.log(`[message] Data received from server: ${event.data}`);
+        if (event.data == "start") {
+            timer.stopTimer();
+            timer.resetTimer();
+            timer.startTimer();
+            clock.style.opacity = '1';
+        } else if (event.data == "stop") {
+            timer.stopTimer();
+            //clock.style.opacity = '0';
+        }
+    };
+
+    socket.onclose = function(event) {
+        if (event.wasClean) {
+            console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+        } else {
+            // e.g. server process killed or network down
+            // event.code is usually 1006 in this case
+            console.log('[close] Connection died');
+        }
+    };
+
+    socket.onerror = function(error) {
+        console.log(`[error] ${error.message}`);
+    };
+    // johnh end
     // Global constants
     const transitionDelays = 500,
         timeoutDelay = 250,
@@ -147,7 +182,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/onversionchange
         // Get focus mode
         focus = settings.data.focusMode;
 
-        timer = $('.clock').timer({ stopVal: 10000 });
+        timer = $('.clock').timer({ stopVal: 11 }); //johnh
         // Get and set prompter text
         updateContents();
         setPromptHeight();

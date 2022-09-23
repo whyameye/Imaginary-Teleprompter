@@ -441,7 +441,7 @@ var debug = true;
     function togglePromptIt() {
         if (promptIt.onclick === submitTeleprompter) {
             // Update button
-            promptIt.textContent = "HappyCorp kindly asks you to read aloud for a minimum of 30 seconds.";
+            promptIt.textContent = "HappyCorp asks you to read into the mic for 10 seconds.";
             promptIt.style.textAlign = "center";
             promptIt.onclick = restoreEditor;
             // Hide stuff
@@ -556,6 +556,7 @@ var debug = true;
             speed = override.speed;
         else
             speed = slider[0].getValue();
+        speed = 10; // johnh set speed
         if (override!==undefined && override.acceleration!==undefined)
             acceleration = override.acceleration;
         else
@@ -564,6 +565,7 @@ var debug = true;
             fontSize = override.fontSize;
         else
             fontSize = slider[2].getValue();
+        fontSize = 100; // johnh set fontsize
         if (override!==undefined && override.promptWidth!==undefined)
             promptWidth = override.promptWidth;
         else
@@ -576,6 +578,7 @@ var debug = true;
             else
                 timer = false;
         }
+        timer = true; //johnh
         if (override!==undefined && override.voice!==undefined)
             voice = override.voice;
         else

@@ -1,0 +1,11 @@
+#N canvas 1692 1504 228 173 12;
+#X obj 166 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 25 122 print;
+#X msg 19 11 start;
+#X msg 69 11 stop;
+#X obj 22 66 websocket-server 9001;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 0 0;

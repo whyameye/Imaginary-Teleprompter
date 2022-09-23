@@ -17,6 +17,7 @@
 			return false;
 			
 		// Default settings
+		/*
 		var defaults = {
 			autostart	:	false,
 			direction	:	'cw',
@@ -25,6 +26,16 @@
 			stopVal		:	10,
 			loop		:	false
 		};
+*/
+		var defaults = {
+			autostart	:	false,
+			direction	:	'cw',
+			format		:	'{s}', // также {w}, {d}
+			startVal	:	0,
+			stopVal		:	10,
+			loop		:	false
+		};
+
 
 		this.data('timer',[]);
 		var timer = this.data('timer');
@@ -43,7 +54,7 @@
 		timer.currentVal = timer.options.startVal;
 		timer.step = 1000;
 		timer.callback = callback || function(){};
-		
+
 		// Debug variables
 		timer.debug = {
 			index		:	'#'+timer.target.attr('id')
@@ -67,6 +78,13 @@
 			{
 				clearInterval(timer.interval);
 				timer.interval = false;
+				timer.target.text(":("); // Johnh
+				setTimeout(function() {
+					if (!timer.interval)
+						document.getElementsByClassName("clock")[0].style.opacity = '0';
+				}, 2000);
+
+
 			}
 		}
 		// Stop and reset timer to current settings
@@ -193,7 +211,11 @@
 				timer.target.resetTimer();
 				timer.target.startTimer();
 			}
-		}
+				timer.target.text(":)"); // Johnh
+				setTimeout(function() {
+					if (!timer.interval)
+					document.getElementsByClassName("clock")[0].style.opacity = '0';
+				}, 2000);}
 		
 		// Putting starting value at creation
 		timer.target.text(timer.formate(timer.options.startVal));
