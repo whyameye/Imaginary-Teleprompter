@@ -80,6 +80,11 @@ var debug = true;
         "rewind":20
     });
 
+    setTimeout(function()
+    {
+        submitTeleprompter();
+    }, 1000); // johnh
+
     function init() {
         // Set globals
         tic = false;
