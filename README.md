@@ -1,3 +1,14 @@
+# All hacked up: Not for generic use
+
+This is a hacked up version of the Teleprompter used for an art installation.
+
+## Startup
+1. Before booting up laptop, make sure USB microphone is unplugged
+1. boot up
+1. Plug in mic
+1. Boot up and start all parts to "virtual baby" laptop
+1. run startup script to this teleprompter
+
 ![Imaginary Teleprompter](https://github.com/ImaginarySense/Imaginary-Teleprompter-Electron/raw/master/build/install-spinner.png)
 
 [![GitHub license](https://img.shields.io/badge/license-GPL3-blue.svg)](https://raw.githubusercontent.com/ImaginarySense/Imaginary-Teleprompter/master/LICENSE)
