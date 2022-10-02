@@ -1,6 +1,6 @@
 # All hacked up: Not for generic use
 
-This is a hacked up version of the Teleprompter used for an art installation.
+This is a hacked up version of the Teleprompter intended for use as part of an art installation.
 
 ## Startup
 1. Before booting up laptop, make sure USB microphone is unplugged
